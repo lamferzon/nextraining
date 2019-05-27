@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Infortunio.
+    -->
+    <changeSet id="20190527224035-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="specialista_id"
+                                 baseTableName="infortunio"
+                                 constraintName="fk_infortunio_specialista_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="specialista"/>
+
+        <addForeignKeyConstraint baseColumnNames="calciatore_id"
+                                 baseTableName="infortunio"
+                                 constraintName="fk_infortunio_calciatore_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="calciatore"/>
+
+    </changeSet>
+</databaseChangeLog>

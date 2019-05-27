@@ -1,0 +1,26 @@
+{
+  "nextrainingApp": {
+    "infortunio": {
+      "home": {
+        "title": "Infortunios",
+        "createLabel": "Create a new Infortunio",
+        "createOrEditLabel": "Create or edit a Infortunio"
+      },
+      "created": "A new Infortunio is created with identifier {{ param }}",
+      "updated": "A Infortunio is updated with identifier {{ param }}",
+      "deleted": "A Infortunio is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Infortunio {{ id }}?"
+      },
+      "detail": {
+        "title": "Infortunio"
+      },
+      "dataInizio": "Data Inizio",
+      "dataFine": "Data Fine",
+      "gravita": "Gravita",
+      "descrizione": "Descrizione",
+      "specialista": "Specialista",
+      "calciatore": "Calciatore"
+    }
+  }
+}

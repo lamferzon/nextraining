@@ -1,0 +1,26 @@
+{
+  "nextrainingApp": {
+    "infortunio": {
+      "home": {
+        "title": "Infortuni",
+        "createLabel": "Genera un nuovo infortunio",
+        "createOrEditLabel": "Genera o modifica un infortunio"
+      },
+      "created": "&Egrave; stato generato un nuovo infortunio con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato l'infortunio identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato l'infortunio con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare l'infortunio {{ id }}?"
+      },
+      "detail": {
+        "title": "Infortunio"
+      },
+      "dataInizio": "Data inizio",
+      "dataFine": "Data fine",
+      "gravita": "Gravit&agrave;",
+      "descrizione": "Descrizione",
+      "specialista": "Specialista",
+      "calciatore": "Atleta"
+    }
+  }
+}

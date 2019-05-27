@@ -1,0 +1,70 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="nextrainingApp.parametriFisici.home.title">Parametri Fisicis</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-parametri-fisici" [routerLink]="['/parametri-fisici/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="nextrainingApp.parametriFisici.home.createLabel">
+            Create new Parametri Fisici
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="parametriFisicis">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dataRivelazione"><span jhiTranslate="nextrainingApp.parametriFisici.dataRivelazione">Data Rivelazione</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="massaCorporea"><span jhiTranslate="nextrainingApp.parametriFisici.massaCorporea">Massa Corporea</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="altezza"><span jhiTranslate="nextrainingApp.parametriFisici.altezza">Altezza</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="bmi"><span jhiTranslate="nextrainingApp.parametriFisici.bmi">Bmi</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="condizione"><span jhiTranslate="nextrainingApp.parametriFisici.condizione">Condizione</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fcRiposo"><span jhiTranslate="nextrainingApp.parametriFisici.fcRiposo">Fc Riposo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="calciatore.cognome"><span jhiTranslate="nextrainingApp.parametriFisici.calciatore">Calciatore</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let parametriFisici of parametriFisicis ;trackBy: trackId">
+                <td><a [routerLink]="['/parametri-fisici', parametriFisici.id, 'view' ]">{{parametriFisici.id}}</a></td>
+                <td>{{parametriFisici.dataRivelazione | date:'mediumDate'}}</td>
+                <td>{{parametriFisici.massaCorporea}}</td>
+                <td>{{parametriFisici.altezza}}</td>
+                <td>{{parametriFisici.bmi}}</td>
+                <td jhiTranslate="{{'nextrainingApp.Stato.' + parametriFisici.condizione}}">{{parametriFisici.condizione}}</td>
+                <td>{{parametriFisici.fcRiposo}}</td>
+                <td>
+                    <div *ngIf="parametriFisici.calciatore">
+                        <a [routerLink]="['../calciatore', parametriFisici.calciatore?.id, 'view' ]" >{{parametriFisici.calciatore?.cognome}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/parametri-fisici', parametriFisici.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/parametri-fisici', parametriFisici.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'parametri-fisici', { outlets: { popup: parametriFisici.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

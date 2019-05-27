@@ -1,0 +1,103 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-prova-1500-m-heading" jhiTranslate="nextrainingApp.prova1500m.home.createOrEditLabel">Create or edit a Prova 1500 M</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!prova1500m.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nextrainingApp.prova1500m.dataProva" for="field_dataProva">Data Prova</label>
+                    <div class="input-group">
+                        <input id="field_dataProva" type="text" class="form-control" name="dataProva" ngbDatepicker  #dataProvaDp="ngbDatepicker" formControlName="dataProva"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dataProvaDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dataProva').invalid && (editForm.get('dataProva').dirty || editForm.get('dataProva').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dataProva').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nextrainingApp.prova1500m.tempo" for="field_tempo">Tempo</label>
+                    <input type="number" class="form-control" name="tempo" id="field_tempo"
+                           formControlName="tempo"/>
+                    <div *ngIf="editForm.get('tempo').invalid && (editForm.get('tempo').dirty || editForm.get('tempo').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('tempo').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('tempo')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nextrainingApp.prova1500m.tempoKm" for="field_tempoKm">Tempo Km</label>
+                    <input type="number" class="form-control" name="tempoKm" id="field_tempoKm"
+                           formControlName="tempoKm"/>
+                    <div *ngIf="editForm.get('tempoKm').invalid && (editForm.get('tempoKm').dirty || editForm.get('tempoKm').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('tempoKm').errors.max" jhiTranslate="entity.validation.max" [translateValues]="{ max: 10 }">
+                            This field cannot be more than 10.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('tempoKm')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nextrainingApp.prova1500m.commento" for="field_commento">Commento</label>
+                    <select class="form-control" name="commento" formControlName="commento" id="field_commento">
+                        <option value="SCARSO">{{'nextrainingApp.Feedback.SCARSO' | translate}}</option>
+                        <option value="DISCRETO">{{'nextrainingApp.Feedback.DISCRETO' | translate}}</option>
+                        <option value="BUONO">{{'nextrainingApp.Feedback.BUONO' | translate}}</option>
+                        <option value="OTTIMO">{{'nextrainingApp.Feedback.OTTIMO' | translate}}</option>
+                        <option value="ECCELLENTE">{{'nextrainingApp.Feedback.ECCELLENTE' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nextrainingApp.prova1500m.condClimatiche" for="field_condClimatiche">Cond Climatiche</label>
+                    <input type="text" class="form-control" name="condClimatiche" id="field_condClimatiche"
+                           formControlName="condClimatiche"/>
+                    <div *ngIf="editForm.get('condClimatiche').invalid && (editForm.get('condClimatiche').dirty || editForm.get('condClimatiche').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('condClimatiche').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nextrainingApp.prova1500m.calciatore" for="field_calciatore">Calciatore</label>
+                    <select class="form-control" id="field_calciatore" name="calciatore" formControlName="calciatore">
+                        <option *ngIf="!editForm.get('calciatore').value" [ngValue]="null" selected></option>
+                        <option [ngValue]="calciatoreOption.id === editForm.get('calciatore').value?.id ? editForm.get('calciatore').value : calciatoreOption" *ngFor="let calciatoreOption of calciatores; trackBy: trackCalciatoreById">{{calciatoreOption.cognome}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('calciatore').invalid && (editForm.get('calciatore').dirty || editForm.get('calciatore').touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('calciatore').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

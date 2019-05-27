@@ -1,0 +1,95 @@
+{
+    "name": "Calciatore",
+    "fields": [
+        {
+            "fieldName": "codFiscale",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "unique"
+            ],
+            "fieldValidateRulesMaxlength": 16
+        },
+        {
+            "fieldName": "cognome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "dataNascita",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "numTelefono",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "reparto",
+            "fieldType": "Reparto",
+            "fieldValues": "DIFESA,CENTROCAMPO,ATTACCO"
+        },
+        {
+            "fieldName": "ruolo",
+            "fieldType": "Ruolo",
+            "fieldValues": "POR,LIB,ADA,TD,CD,DC,CS,TS,ASA,CCD,MDD,CDC,MDS,CDS,AD,ED,CC,CCS,ES,AS,COD,CAD,COC,CAS,COS,CA,PD,ATT,PS,AT"
+        },
+        {
+            "fieldName": "selettore",
+            "fieldType": "Selettore",
+            "fieldValues": "DIFENSORE,ATTACCANTE"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "allenamento",
+            "otherEntityRelationshipName": "calciatore",
+            "relationshipName": "allenamento",
+            "otherEntityField": "dataSvolgimento",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "allenamentoAggiuntivo",
+            "otherEntityRelationshipName": "calciatore",
+            "relationshipName": "allenamentoExtra",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190527224029",
+    "entityTableName": "calciatore",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

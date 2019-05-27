@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="specialista">
+            <h2><span jhiTranslate="nextrainingApp.specialista.detail.title">Specialista</span> {{specialista.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nextrainingApp.specialista.codFiscale">Cod Fiscale</span></dt>
+                <dd>
+                    <span>{{specialista.codFiscale}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.specialista.cognome">Cognome</span></dt>
+                <dd>
+                    <span>{{specialista.cognome}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.specialista.nome">Nome</span></dt>
+                <dd>
+                    <span>{{specialista.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.specialista.specializzazione">Specializzazione</span></dt>
+                <dd>
+                    <span>{{specialista.specializzazione}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.specialista.numTelefono">Num Telefono</span></dt>
+                <dd>
+                    <span>{{specialista.numTelefono}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.specialista.email">Email</span></dt>
+                <dd>
+                    <span>{{specialista.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.specialista.indirizzoStudio">Indirizzo Studio</span></dt>
+                <dd>
+                    <span>{{specialista.indirizzoStudio}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.specialista.paeseStudio">Paese Studio</span></dt>
+                <dd>
+                    <span>{{specialista.paeseStudio}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/specialista', specialista.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

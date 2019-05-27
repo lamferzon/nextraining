@@ -1,0 +1,27 @@
+{
+  "nextrainingApp": {
+    "testdiConconi": {
+      "home": {
+        "title": "Testdi Conconis",
+        "createLabel": "Create a new Testdi Conconi",
+        "createOrEditLabel": "Create or edit a Testdi Conconi"
+      },
+      "created": "A new Testdi Conconi is created with identifier {{ param }}",
+      "updated": "A Testdi Conconi is updated with identifier {{ param }}",
+      "deleted": "A Testdi Conconi is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Testdi Conconi {{ id }}?"
+      },
+      "detail": {
+        "title": "Testdi Conconi"
+      },
+      "fcMax": "Fc Max",
+      "sogliaAnaerobica": "Soglia Anaerobica",
+      "velSoglia": "Vel Soglia",
+      "durata": "Durata",
+      "commento": "Commento",
+      "condClimatiche": "Cond Climatiche",
+      "calciatore": "Calciatore"
+    }
+  }
+}

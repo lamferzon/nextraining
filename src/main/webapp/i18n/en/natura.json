@@ -1,0 +1,11 @@
+{
+  "nextrainingApp": {
+    "Natura": {
+      "null": "",
+      "AEROBICO": "AEROBICO",
+      "ANAEROBICO": "ANAEROBICO",
+      "POTENZIAMENTO": "POTENZIAMENTO",
+      "VELOCITA": "VELOCITA"
+    }
+  }
+}

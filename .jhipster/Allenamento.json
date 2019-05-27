@@ -1,0 +1,44 @@
+{
+    "name": "Allenamento",
+    "fields": [
+        {
+            "fieldName": "dataSvolgimento",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "natura",
+            "fieldType": "Natura",
+            "fieldValues": "AEROBICO,ANAEROBICO,POTENZIAMENTO,VELOCITA",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lavoro",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "calciatore",
+            "otherEntityRelationshipName": "allenamento",
+            "relationshipValidateRules": "required",
+            "relationshipName": "calciatore",
+            "otherEntityField": "cognome",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190527224037",
+    "entityTableName": "allenamento",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

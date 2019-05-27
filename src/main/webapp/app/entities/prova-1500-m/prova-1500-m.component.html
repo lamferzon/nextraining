@@ -1,0 +1,68 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="nextrainingApp.prova1500m.home.title">Prova 1500 Ms</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-prova-1500-m" [routerLink]="['/prova-1500-m/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="nextrainingApp.prova1500m.home.createLabel">
+            Create new Prova 1500 M
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="prova1500ms">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dataProva"><span jhiTranslate="nextrainingApp.prova1500m.dataProva">Data Prova</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tempo"><span jhiTranslate="nextrainingApp.prova1500m.tempo">Tempo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tempoKm"><span jhiTranslate="nextrainingApp.prova1500m.tempoKm">Tempo Km</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="commento"><span jhiTranslate="nextrainingApp.prova1500m.commento">Commento</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="condClimatiche"><span jhiTranslate="nextrainingApp.prova1500m.condClimatiche">Cond Climatiche</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="calciatore.cognome"><span jhiTranslate="nextrainingApp.prova1500m.calciatore">Calciatore</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let prova1500m of prova1500ms ;trackBy: trackId">
+                <td><a [routerLink]="['/prova-1500-m', prova1500m.id, 'view' ]">{{prova1500m.id}}</a></td>
+                <td>{{prova1500m.dataProva | date:'mediumDate'}}</td>
+                <td>{{prova1500m.tempo}}</td>
+                <td>{{prova1500m.tempoKm}}</td>
+                <td jhiTranslate="{{'nextrainingApp.Feedback.' + prova1500m.commento}}">{{prova1500m.commento}}</td>
+                <td>{{prova1500m.condClimatiche}}</td>
+                <td>
+                    <div *ngIf="prova1500m.calciatore">
+                        <a [routerLink]="['../calciatore', prova1500m.calciatore?.id, 'view' ]" >{{prova1500m.calciatore?.cognome}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/prova-1500-m', prova1500m.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/prova-1500-m', prova1500m.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'prova-1500-m', { outlets: { popup: prova1500m.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

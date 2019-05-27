@@ -1,0 +1,28 @@
+{
+  "nextrainingApp": {
+    "specialista": {
+      "home": {
+        "title": "Specialistas",
+        "createLabel": "Create a new Specialista",
+        "createOrEditLabel": "Create or edit a Specialista"
+      },
+      "created": "A new Specialista is created with identifier {{ param }}",
+      "updated": "A Specialista is updated with identifier {{ param }}",
+      "deleted": "A Specialista is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Specialista {{ id }}?"
+      },
+      "detail": {
+        "title": "Specialista"
+      },
+      "codFiscale": "Cod Fiscale",
+      "cognome": "Cognome",
+      "nome": "Nome",
+      "specializzazione": "Specializzazione",
+      "numTelefono": "Num Telefono",
+      "email": "Email",
+      "indirizzoStudio": "Indirizzo Studio",
+      "paeseStudio": "Paese Studio"
+    }
+  }
+}

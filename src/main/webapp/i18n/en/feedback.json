@@ -1,0 +1,12 @@
+{
+  "nextrainingApp": {
+    "Feedback": {
+      "null": "",
+      "SCARSO": "SCARSO",
+      "DISCRETO": "DISCRETO",
+      "BUONO": "BUONO",
+      "OTTIMO": "OTTIMO",
+      "ECCELLENTE": "ECCELLENTE"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "nextrainingApp": {
+    "allenamentoAggiuntivo": {
+      "home": {
+        "title": "Allenamento Aggiuntivos",
+        "createLabel": "Create a new Allenamento Aggiuntivo",
+        "createOrEditLabel": "Create or edit a Allenamento Aggiuntivo"
+      },
+      "created": "A new Allenamento Aggiuntivo is created with identifier {{ param }}",
+      "updated": "A Allenamento Aggiuntivo is updated with identifier {{ param }}",
+      "deleted": "A Allenamento Aggiuntivo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Allenamento Aggiuntivo {{ id }}?"
+      },
+      "detail": {
+        "title": "Allenamento Aggiuntivo"
+      },
+      "sport": "Sport",
+      "natura": "Natura",
+      "lavoro": "Lavoro",
+      "durata": "Durata",
+      "calciatore": "Calciatore"
+    }
+  }
+}

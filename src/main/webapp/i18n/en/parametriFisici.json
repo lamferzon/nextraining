@@ -1,0 +1,27 @@
+{
+  "nextrainingApp": {
+    "parametriFisici": {
+      "home": {
+        "title": "Parametri Fisicis",
+        "createLabel": "Create a new Parametri Fisici",
+        "createOrEditLabel": "Create or edit a Parametri Fisici"
+      },
+      "created": "A new Parametri Fisici is created with identifier {{ param }}",
+      "updated": "A Parametri Fisici is updated with identifier {{ param }}",
+      "deleted": "A Parametri Fisici is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Parametri Fisici {{ id }}?"
+      },
+      "detail": {
+        "title": "Parametri Fisici"
+      },
+      "dataRivelazione": "Data Rivelazione",
+      "massaCorporea": "Massa Corporea",
+      "altezza": "Altezza",
+      "bmi": "Bmi",
+      "condizione": "Condizione",
+      "fcRiposo": "Fc Riposo",
+      "calciatore": "Calciatore"
+    }
+  }
+}

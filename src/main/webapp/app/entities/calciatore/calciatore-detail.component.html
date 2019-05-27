@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="calciatore">
+            <h2><span jhiTranslate="nextrainingApp.calciatore.detail.title">Calciatore</span> {{calciatore.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nextrainingApp.calciatore.codFiscale">Cod Fiscale</span></dt>
+                <dd>
+                    <span>{{calciatore.codFiscale}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.calciatore.cognome">Cognome</span></dt>
+                <dd>
+                    <span>{{calciatore.cognome}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.calciatore.nome">Nome</span></dt>
+                <dd>
+                    <span>{{calciatore.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.calciatore.dataNascita">Data Nascita</span></dt>
+                <dd>
+                    <span>{{calciatore.dataNascita}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.calciatore.numTelefono">Num Telefono</span></dt>
+                <dd>
+                    <span>{{calciatore.numTelefono}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.calciatore.email">Email</span></dt>
+                <dd>
+                    <span>{{calciatore.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.calciatore.reparto">Reparto</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'nextrainingApp.Reparto.' + calciatore.reparto}}">{{calciatore.reparto}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.calciatore.ruolo">Ruolo</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'nextrainingApp.Ruolo.' + calciatore.ruolo}}">{{calciatore.ruolo}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.calciatore.selettore">Selettore</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'nextrainingApp.Selettore.' + calciatore.selettore}}">{{calciatore.selettore}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/calciatore', calciatore.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

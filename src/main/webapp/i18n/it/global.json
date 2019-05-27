@@ -6,7 +6,17 @@
       "home": "Home",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
-        "main": "Entità",
+        "main": "Contenuti",
+        "calciatore": "Atleti",
+        "testdiConconi": "Test di Conconi",
+        "testdiCooper": "Test di Cooper",
+        "parametriFisici": "Parametri fisici",
+        "prova1500M": "Prove 1500m",
+        "prova70M": "Prove 70m",
+        "infortunio": "Infortuni",
+        "specialista": "Specialisti",
+        "allenamento": "Allenamenti",
+        "allenamentoAggiuntivo": "Allenamenti extra",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

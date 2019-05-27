@@ -7,6 +7,16 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "calciatore": "Calciatore",
+        "testdiConconi": "Testdi Conconi",
+        "testdiCooper": "Testdi Cooper",
+        "parametriFisici": "Parametri Fisici",
+        "prova1500M": "Prova 1500 M",
+        "prova70M": "Prova 70 M",
+        "infortunio": "Infortunio",
+        "specialista": "Specialista",
+        "allenamento": "Allenamento",
+        "allenamentoAggiuntivo": "Allenamento Aggiuntivo",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

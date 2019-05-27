@@ -1,0 +1,68 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="nextrainingApp.specialista.home.title">Specialistas</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-specialista" [routerLink]="['/specialista/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="nextrainingApp.specialista.home.createLabel">
+            Create new Specialista
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="specialistas">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codFiscale"><span jhiTranslate="nextrainingApp.specialista.codFiscale">Cod Fiscale</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cognome"><span jhiTranslate="nextrainingApp.specialista.cognome">Cognome</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nome"><span jhiTranslate="nextrainingApp.specialista.nome">Nome</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="specializzazione"><span jhiTranslate="nextrainingApp.specialista.specializzazione">Specializzazione</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="numTelefono"><span jhiTranslate="nextrainingApp.specialista.numTelefono">Num Telefono</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="email"><span jhiTranslate="nextrainingApp.specialista.email">Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="indirizzoStudio"><span jhiTranslate="nextrainingApp.specialista.indirizzoStudio">Indirizzo Studio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="paeseStudio"><span jhiTranslate="nextrainingApp.specialista.paeseStudio">Paese Studio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let specialista of specialistas ;trackBy: trackId">
+                <td><a [routerLink]="['/specialista', specialista.id, 'view' ]">{{specialista.id}}</a></td>
+                <td>{{specialista.codFiscale}}</td>
+                <td>{{specialista.cognome}}</td>
+                <td>{{specialista.nome}}</td>
+                <td>{{specialista.specializzazione}}</td>
+                <td>{{specialista.numTelefono}}</td>
+                <td>{{specialista.email}}</td>
+                <td>{{specialista.indirizzoStudio}}</td>
+                <td>{{specialista.paeseStudio}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/specialista', specialista.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/specialista', specialista.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'specialista', { outlets: { popup: specialista.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

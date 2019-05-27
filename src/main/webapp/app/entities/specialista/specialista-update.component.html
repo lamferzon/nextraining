@@ -1,0 +1,124 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-specialista-heading" jhiTranslate="nextrainingApp.specialista.home.createOrEditLabel">Create or edit a Specialista</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!specialista.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nextrainingApp.specialista.codFiscale" for="field_codFiscale">Cod Fiscale</label>
+                    <input type="text" class="form-control" name="codFiscale" id="field_codFiscale"
+                           formControlName="codFiscale"/>
+                    <div *ngIf="editForm.get('codFiscale').invalid && (editForm.get('codFiscale').dirty || editForm.get('codFiscale').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('codFiscale').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 16 }">
+                        This field cannot be longer than 16 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nextrainingApp.specialista.cognome" for="field_cognome">Cognome</label>
+                    <input type="text" class="form-control" name="cognome" id="field_cognome"
+                           formControlName="cognome"/>
+                    <div *ngIf="editForm.get('cognome').invalid && (editForm.get('cognome').dirty || editForm.get('cognome').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('cognome').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('cognome').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nextrainingApp.specialista.nome" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                           formControlName="nome"/>
+                    <div *ngIf="editForm.get('nome').invalid && (editForm.get('nome').dirty || editForm.get('nome').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nome').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nome').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nextrainingApp.specialista.specializzazione" for="field_specializzazione">Specializzazione</label>
+                    <input type="text" class="form-control" name="specializzazione" id="field_specializzazione"
+                           formControlName="specializzazione"/>
+                    <div *ngIf="editForm.get('specializzazione').invalid && (editForm.get('specializzazione').dirty || editForm.get('specializzazione').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('specializzazione').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nextrainingApp.specialista.numTelefono" for="field_numTelefono">Num Telefono</label>
+                    <input type="text" class="form-control" name="numTelefono" id="field_numTelefono"
+                           formControlName="numTelefono"/>
+                    <div *ngIf="editForm.get('numTelefono').invalid && (editForm.get('numTelefono').dirty || editForm.get('numTelefono').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('numTelefono').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('numTelefono').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nextrainingApp.specialista.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                    <div *ngIf="editForm.get('email').invalid && (editForm.get('email').dirty || editForm.get('email').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('email').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 40 }">
+                        This field cannot be longer than 40 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nextrainingApp.specialista.indirizzoStudio" for="field_indirizzoStudio">Indirizzo Studio</label>
+                    <input type="text" class="form-control" name="indirizzoStudio" id="field_indirizzoStudio"
+                           formControlName="indirizzoStudio"/>
+                    <div *ngIf="editForm.get('indirizzoStudio').invalid && (editForm.get('indirizzoStudio').dirty || editForm.get('indirizzoStudio').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('indirizzoStudio').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nextrainingApp.specialista.paeseStudio" for="field_paeseStudio">Paese Studio</label>
+                    <input type="text" class="form-control" name="paeseStudio" id="field_paeseStudio"
+                           formControlName="paeseStudio"/>
+                    <div *ngIf="editForm.get('paeseStudio').invalid && (editForm.get('paeseStudio').dirty || editForm.get('paeseStudio').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('paeseStudio').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

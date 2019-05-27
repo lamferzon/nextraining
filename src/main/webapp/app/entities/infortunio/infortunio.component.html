@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="nextrainingApp.infortunio.home.title">Infortunios</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-infortunio" [routerLink]="['/infortunio/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="nextrainingApp.infortunio.home.createLabel">
+            Create new Infortunio
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="infortunios">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dataInizio"><span jhiTranslate="nextrainingApp.infortunio.dataInizio">Data Inizio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dataFine"><span jhiTranslate="nextrainingApp.infortunio.dataFine">Data Fine</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="gravita"><span jhiTranslate="nextrainingApp.infortunio.gravita">Gravita</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="descrizione"><span jhiTranslate="nextrainingApp.infortunio.descrizione">Descrizione</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="specialista.cognome"><span jhiTranslate="nextrainingApp.infortunio.specialista">Specialista</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="calciatore.cognome"><span jhiTranslate="nextrainingApp.infortunio.calciatore">Calciatore</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let infortunio of infortunios ;trackBy: trackId">
+                <td><a [routerLink]="['/infortunio', infortunio.id, 'view' ]">{{infortunio.id}}</a></td>
+                <td>{{infortunio.dataInizio | date:'mediumDate'}}</td>
+                <td>{{infortunio.dataFine | date:'mediumDate'}}</td>
+                <td jhiTranslate="{{'nextrainingApp.Gravita.' + infortunio.gravita}}">{{infortunio.gravita}}</td>
+                <td>{{infortunio.descrizione}}</td>
+                <td>
+                    <div *ngIf="infortunio.specialista">
+                        <a [routerLink]="['../specialista', infortunio.specialista?.id, 'view' ]" >{{infortunio.specialista?.cognome}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="infortunio.calciatore">
+                        <a [routerLink]="['../calciatore', infortunio.calciatore?.id, 'view' ]" >{{infortunio.calciatore?.cognome}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/infortunio', infortunio.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/infortunio', infortunio.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'infortunio', { outlets: { popup: infortunio.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

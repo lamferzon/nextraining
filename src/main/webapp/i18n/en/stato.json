@@ -1,0 +1,10 @@
+{
+  "nextrainingApp": {
+    "Stato": {
+      "null": "",
+      "SOTTOPESO": "SOTTOPESO",
+      "NORMOPESO": "NORMOPESO",
+      "SOVRAPPESO": "SOVRAPPESO"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "nextrainingApp": {
+    "Reparto": {
+      "null": "",
+      "DIFESA": "Difesa",
+      "CENTROCAMPO": "Centrocampo",
+      "ATTACCO": "Attacco"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+    "name": "Prova1500m",
+    "fields": [
+        {
+            "fieldName": "dataProva",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tempo",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tempoKm",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "max"
+            ],
+            "fieldValidateRulesMax": 10
+        },
+        {
+            "fieldName": "commento",
+            "fieldType": "Feedback",
+            "fieldValues": "SCARSO,DISCRETO,BUONO,OTTIMO,ECCELLENTE"
+        },
+        {
+            "fieldName": "condClimatiche",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "calciatore",
+            "otherEntityRelationshipName": "prova1500m",
+            "relationshipValidateRules": "required",
+            "relationshipName": "calciatore",
+            "otherEntityField": "cognome"
+        }
+    ],
+    "changelogDate": "20190527224033",
+    "entityTableName": "prova_1500_m",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

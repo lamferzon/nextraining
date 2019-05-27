@@ -11,6 +11,24 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224029_added_entity_Calciatore.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224030_added_entity_TestdiConconi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224031_added_entity_TestdiCooper.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224032_added_entity_ParametriFisici.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224033_added_entity_Prova1500m.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224034_added_entity_Prova70m.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224035_added_entity_Infortunio.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224036_added_entity_Specialista.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224037_added_entity_Allenamento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224038_added_entity_AllenamentoAggiuntivo.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190527224030_added_entity_constraints_TestdiConconi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224031_added_entity_constraints_TestdiCooper.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224032_added_entity_constraints_ParametriFisici.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224033_added_entity_constraints_Prova1500m.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224034_added_entity_constraints_Prova70m.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224035_added_entity_constraints_Infortunio.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224037_added_entity_constraints_Allenamento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190527224038_added_entity_constraints_AllenamentoAggiuntivo.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

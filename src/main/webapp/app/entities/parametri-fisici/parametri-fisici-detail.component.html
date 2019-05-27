@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="parametriFisici">
+            <h2><span jhiTranslate="nextrainingApp.parametriFisici.detail.title">Parametri Fisici</span> {{parametriFisici.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nextrainingApp.parametriFisici.dataRivelazione">Data Rivelazione</span></dt>
+                <dd>
+                    <span>{{parametriFisici.dataRivelazione}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.parametriFisici.massaCorporea">Massa Corporea</span></dt>
+                <dd>
+                    <span>{{parametriFisici.massaCorporea}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.parametriFisici.altezza">Altezza</span></dt>
+                <dd>
+                    <span>{{parametriFisici.altezza}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.parametriFisici.bmi">Bmi</span></dt>
+                <dd>
+                    <span>{{parametriFisici.bmi}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.parametriFisici.condizione">Condizione</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'nextrainingApp.Stato.' + parametriFisici.condizione}}">{{parametriFisici.condizione}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.parametriFisici.fcRiposo">Fc Riposo</span></dt>
+                <dd>
+                    <span>{{parametriFisici.fcRiposo}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.parametriFisici.calciatore">Calciatore</span></dt>
+                <dd>
+                    <div *ngIf="parametriFisici.calciatore">
+                        <a [routerLink]="['/calciatore', parametriFisici.calciatore?.id, 'view']">{{parametriFisici.calciatore?.cognome}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/parametri-fisici', parametriFisici.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

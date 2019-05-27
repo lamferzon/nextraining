@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="infortunio">
+            <h2><span jhiTranslate="nextrainingApp.infortunio.detail.title">Infortunio</span> {{infortunio.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nextrainingApp.infortunio.dataInizio">Data Inizio</span></dt>
+                <dd>
+                    <span>{{infortunio.dataInizio}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.infortunio.dataFine">Data Fine</span></dt>
+                <dd>
+                    <span>{{infortunio.dataFine}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.infortunio.gravita">Gravita</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'nextrainingApp.Gravita.' + infortunio.gravita}}">{{infortunio.gravita}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.infortunio.descrizione">Descrizione</span></dt>
+                <dd>
+                    <span>{{infortunio.descrizione}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.infortunio.specialista">Specialista</span></dt>
+                <dd>
+                    <div *ngIf="infortunio.specialista">
+                        <a [routerLink]="['/specialista', infortunio.specialista?.id, 'view']">{{infortunio.specialista?.cognome}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.infortunio.calciatore">Calciatore</span></dt>
+                <dd>
+                    <div *ngIf="infortunio.calciatore">
+                        <a [routerLink]="['/calciatore', infortunio.calciatore?.id, 'view']">{{infortunio.calciatore?.cognome}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/infortunio', infortunio.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

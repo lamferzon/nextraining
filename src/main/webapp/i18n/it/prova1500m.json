@@ -1,0 +1,26 @@
+{
+  "nextrainingApp": {
+    "prova1500m": {
+      "home": {
+        "title": "Prove 1500m",
+        "createLabel": "Genera una nuova prova",
+        "createOrEditLabel": "Genera o modifica una prova"
+      },
+      "created": "&Egrave; stata generata una nuova prova con identificatore {{ param }}",
+      "updated": "&Egrave; stata aggiornata la prova identificata da {{ param }}",
+      "deleted": "&Egrave; stata eliminata la prova con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare la prova {{ id }}?"
+      },
+      "detail": {
+        "title": "Prova 1500m"
+      },
+      "dataProva": "Data",
+      "tempo": "Tempo (min,sec)",
+      "tempoKm": "Tempo km (min,sec)",
+      "commento": "Commento",
+      "condClimatiche": "Cond. climatiche",
+      "calciatore": "Atleta"
+    }
+  }
+}

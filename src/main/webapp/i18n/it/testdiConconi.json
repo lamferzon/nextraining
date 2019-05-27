@@ -1,0 +1,27 @@
+{
+  "nextrainingApp": {
+    "testdiConconi": {
+      "home": {
+        "title": "Test di Conconi",
+        "createLabel": "Genera un nuovo test",
+        "createOrEditLabel": "Genera o modifica un test"
+      },
+      "created": "&Egrave; stato generato un nuovo test con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato il test identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato il test con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare il test{ id }}?"
+      },
+      "detail": {
+        "title": "Test di Conconi"
+      },
+      "fcMax": "FC max (bpm)",
+      "sogliaAnaerobica": "Soglia anaerobica (bpm)",
+      "velSoglia": "Velocit&agrave; soglia (km/h)",
+      "durata": "Durata (min,s)",
+      "commento": "Commento",
+      "condClimatiche": "Cond. climatiche",
+      "calciatore": "Atleta"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "nextrainingApp": {
+    "Ruolo": {
+      "null": "",
+      "POR": "POR",
+      "LIB": "LIB",
+      "ADA": "ADA",
+      "TD": "TD",
+      "CD": "CD",
+      "DC": "DC",
+      "CS": "CS",
+      "TS": "TS",
+      "ASA": "ASA",
+      "CCD": "CCD",
+      "MDD": "MDD",
+      "CDC": "CDC",
+      "MDS": "MDS",
+      "CDS": "CDS",
+      "AD": "AD",
+      "ED": "ED",
+      "CC": "CC",
+      "CCS": "CCS",
+      "ES": "ES",
+      "AS": "AS",
+      "COD": "COD",
+      "CAD": "CAD",
+      "COC": "COC",
+      "CAS": "CAS",
+      "COS": "COS",
+      "CA": "CA",
+      "PD": "PD",
+      "ATT": "ATT",
+      "PS": "PS",
+      "AT": "AT"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+    "name": "TestdiConconi",
+    "fields": [
+        {
+            "fieldName": "fcMax",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "max",
+                "required"
+            ],
+            "fieldValidateRulesMax": 220
+        },
+        {
+            "fieldName": "sogliaAnaerobica",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "max",
+                "required"
+            ],
+            "fieldValidateRulesMax": 220
+        },
+        {
+            "fieldName": "velSoglia",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "max"
+            ],
+            "fieldValidateRulesMax": 100
+        },
+        {
+            "fieldName": "durata",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required",
+                "max"
+            ],
+            "fieldValidateRulesMax": 60
+        },
+        {
+            "fieldName": "commento",
+            "fieldType": "Feedback",
+            "fieldValues": "SCARSO,DISCRETO,BUONO,OTTIMO,ECCELLENTE"
+        },
+        {
+            "fieldName": "condClimatiche",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "calciatore",
+            "otherEntityRelationshipName": "testdiConconi",
+            "relationshipValidateRules": "required",
+            "relationshipName": "calciatore",
+            "otherEntityField": "cognome",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190527224030",
+    "entityTableName": "testdi_conconi",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

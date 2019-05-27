@@ -1,0 +1,26 @@
+{
+  "nextrainingApp": {
+    "testdiCooper": {
+      "home": {
+        "title": "Testdi Coopers",
+        "createLabel": "Create a new Testdi Cooper",
+        "createOrEditLabel": "Create or edit a Testdi Cooper"
+      },
+      "created": "A new Testdi Cooper is created with identifier {{ param }}",
+      "updated": "A Testdi Cooper is updated with identifier {{ param }}",
+      "deleted": "A Testdi Cooper is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Testdi Cooper {{ id }}?"
+      },
+      "detail": {
+        "title": "Testdi Cooper"
+      },
+      "dataTest": "Data Test",
+      "distanza": "Distanza",
+      "v02Max": "V 02 Max",
+      "commento": "Commento",
+      "condClimatiche": "Cond Climatiche",
+      "calciatore": "Calciatore"
+    }
+  }
+}

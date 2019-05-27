@@ -1,0 +1,27 @@
+{
+  "nextrainingApp": {
+    "parametriFisici": {
+      "home": {
+        "title": "Parametri fisici",
+        "createLabel": "Genera una nuova rilevazione",
+        "createOrEditLabel": "Genera o modifica una rilevazione"
+      },
+      "created": "&Egrave; stato generato una nuova relevazione con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornata la rilevazione identificata da {{ param }}",
+      "deleted": "&Egrave; stata eliminata la rilevazione con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare la rilevazione {{ id }}?"
+      },
+      "detail": {
+        "title": "Parametri fisici"
+      },
+      "dataRivelazione": "Data",
+      "massaCorporea": "Massa corporea (kg)",
+      "altezza": "Altezza (cm)",
+      "bmi": "BMI (kg/m&sup2;)",
+      "condizione": "Stato",
+      "fcRiposo": "FC riposo (bpm)",
+      "calciatore": "Atleta"
+    }
+  }
+}

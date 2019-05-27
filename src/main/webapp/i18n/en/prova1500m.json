@@ -1,0 +1,26 @@
+{
+  "nextrainingApp": {
+    "prova1500m": {
+      "home": {
+        "title": "Prova 1500 Ms",
+        "createLabel": "Create a new Prova 1500 M",
+        "createOrEditLabel": "Create or edit a Prova 1500 M"
+      },
+      "created": "A new Prova 1500 M is created with identifier {{ param }}",
+      "updated": "A Prova 1500 M is updated with identifier {{ param }}",
+      "deleted": "A Prova 1500 M is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Prova 1500 M {{ id }}?"
+      },
+      "detail": {
+        "title": "Prova 1500 M"
+      },
+      "dataProva": "Data Prova",
+      "tempo": "Tempo",
+      "tempoKm": "Tempo Km",
+      "commento": "Commento",
+      "condClimatiche": "Cond Climatiche",
+      "calciatore": "Calciatore"
+    }
+  }
+}

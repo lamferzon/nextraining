@@ -1,0 +1,70 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="nextrainingApp.calciatore.home.title">Calciatores</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-calciatore" [routerLink]="['/calciatore/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="nextrainingApp.calciatore.home.createLabel">
+            Create new Calciatore
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="calciatores">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codFiscale"><span jhiTranslate="nextrainingApp.calciatore.codFiscale">Cod Fiscale</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cognome"><span jhiTranslate="nextrainingApp.calciatore.cognome">Cognome</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nome"><span jhiTranslate="nextrainingApp.calciatore.nome">Nome</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dataNascita"><span jhiTranslate="nextrainingApp.calciatore.dataNascita">Data Nascita</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="numTelefono"><span jhiTranslate="nextrainingApp.calciatore.numTelefono">Num Telefono</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="email"><span jhiTranslate="nextrainingApp.calciatore.email">Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reparto"><span jhiTranslate="nextrainingApp.calciatore.reparto">Reparto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="ruolo"><span jhiTranslate="nextrainingApp.calciatore.ruolo">Ruolo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="selettore"><span jhiTranslate="nextrainingApp.calciatore.selettore">Selettore</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let calciatore of calciatores ;trackBy: trackId">
+                <td><a [routerLink]="['/calciatore', calciatore.id, 'view' ]">{{calciatore.id}}</a></td>
+                <td>{{calciatore.codFiscale}}</td>
+                <td>{{calciatore.cognome}}</td>
+                <td>{{calciatore.nome}}</td>
+                <td>{{calciatore.dataNascita | date:'mediumDate'}}</td>
+                <td>{{calciatore.numTelefono}}</td>
+                <td>{{calciatore.email}}</td>
+                <td jhiTranslate="{{'nextrainingApp.Reparto.' + calciatore.reparto}}">{{calciatore.reparto}}</td>
+                <td jhiTranslate="{{'nextrainingApp.Ruolo.' + calciatore.ruolo}}">{{calciatore.ruolo}}</td>
+                <td jhiTranslate="{{'nextrainingApp.Selettore.' + calciatore.selettore}}">{{calciatore.selettore}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/calciatore', calciatore.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/calciatore', calciatore.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'calciatore', { outlets: { popup: calciatore.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

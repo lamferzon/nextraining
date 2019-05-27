@@ -1,0 +1,31 @@
+{
+  "nextrainingApp": {
+    "calciatore": {
+      "home": {
+        "title": "Calciatores",
+        "createLabel": "Create a new Calciatore",
+        "createOrEditLabel": "Create or edit a Calciatore"
+      },
+      "created": "A new Calciatore is created with identifier {{ param }}",
+      "updated": "A Calciatore is updated with identifier {{ param }}",
+      "deleted": "A Calciatore is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Calciatore {{ id }}?"
+      },
+      "detail": {
+        "title": "Calciatore"
+      },
+      "codFiscale": "Cod Fiscale",
+      "cognome": "Cognome",
+      "nome": "Nome",
+      "dataNascita": "Data Nascita",
+      "numTelefono": "Num Telefono",
+      "email": "Email",
+      "reparto": "Reparto",
+      "ruolo": "Ruolo",
+      "selettore": "Selettore",
+      "allenamento": "Allenamento",
+      "allenamentoExtra": "Allenamento Extra"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+    "name": "ParametriFisici",
+    "fields": [
+        {
+            "fieldName": "dataRivelazione",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "massaCorporea",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "max",
+                "required"
+            ],
+            "fieldValidateRulesMax": 150
+        },
+        {
+            "fieldName": "altezza",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "max",
+                "required"
+            ],
+            "fieldValidateRulesMax": 250
+        },
+        {
+            "fieldName": "bmi",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "max"
+            ],
+            "fieldValidateRulesMax": 50
+        },
+        {
+            "fieldName": "condizione",
+            "fieldType": "Stato",
+            "fieldValues": "SOTTOPESO,NORMOPESO,SOVRAPPESO"
+        },
+        {
+            "fieldName": "fcRiposo",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "max"
+            ],
+            "fieldValidateRulesMax": 150
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "calciatore",
+            "otherEntityRelationshipName": "parametriFisici",
+            "relationshipValidateRules": "required",
+            "relationshipName": "calciatore",
+            "otherEntityField": "cognome"
+        }
+    ],
+    "changelogDate": "20190527224032",
+    "entityTableName": "parametri_fisici",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

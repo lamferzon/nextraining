@@ -1,0 +1,9 @@
+{
+  "nextrainingApp": {
+    "Selettore": {
+      "null": "",
+      "DIFENSORE": "Difensore",
+      "ATTACCANTE": "Attaccante"
+    }
+  }
+}

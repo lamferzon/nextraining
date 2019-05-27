@@ -1,0 +1,24 @@
+{
+  "nextrainingApp": {
+    "allenamento": {
+      "home": {
+        "title": "Allenamenti",
+        "createLabel": "Genera un nuovo allenamento",
+        "createOrEditLabel": "Genera o modifica un allenamento"
+      },
+      "created": "&Egrave; stato generato un nuovo allenamento con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato l'allenamento identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato l'allenamento con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare l'allenamento {{ id }}?"
+      },
+      "detail": {
+        "title": "Allenamento"
+      },
+      "dataSvolgimento": "Data",
+      "natura": "Natura",
+      "lavoro": "Lavoro",
+      "calciatore": "Calciatori"
+    }
+  }
+}

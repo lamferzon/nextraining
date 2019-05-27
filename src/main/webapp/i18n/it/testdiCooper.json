@@ -1,0 +1,26 @@
+{
+  "nextrainingApp": {
+    "testdiCooper": {
+      "home": {
+        "title": "Test di Cooper",
+        "createLabel": "Genera un nuovo test",
+        "createOrEditLabel": "Genera o modifica un test"
+      },
+      "created": "&Egrave; stato generato un nuovo test con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato il test dentificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato il test con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare il test {{ id }}?"
+      },
+      "detail": {
+        "title": "Test di Cooper"
+      },
+      "dataTest": "Data",
+      "distanza": "Distanza (km)",
+      "v02Max": "V02 max (ml/kg/min)",
+      "commento": "Commento",
+      "condClimatiche": "Cond. climatiche",
+      "calciatore": "Atleta"
+    }
+  }
+}

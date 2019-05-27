@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="prova1500m">
+            <h2><span jhiTranslate="nextrainingApp.prova1500m.detail.title">Prova 1500 M</span> {{prova1500m.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nextrainingApp.prova1500m.dataProva">Data Prova</span></dt>
+                <dd>
+                    <span>{{prova1500m.dataProva}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.prova1500m.tempo">Tempo</span></dt>
+                <dd>
+                    <span>{{prova1500m.tempo}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.prova1500m.tempoKm">Tempo Km</span></dt>
+                <dd>
+                    <span>{{prova1500m.tempoKm}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.prova1500m.commento">Commento</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'nextrainingApp.Feedback.' + prova1500m.commento}}">{{prova1500m.commento}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.prova1500m.condClimatiche">Cond Climatiche</span></dt>
+                <dd>
+                    <span>{{prova1500m.condClimatiche}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.prova1500m.calciatore">Calciatore</span></dt>
+                <dd>
+                    <div *ngIf="prova1500m.calciatore">
+                        <a [routerLink]="['/calciatore', prova1500m.calciatore?.id, 'view']">{{prova1500m.calciatore?.cognome}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/prova-1500-m', prova1500m.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Allenamento.
+    -->
+    <changeSet id="20190527224037-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="allenamento_id"
+                                 baseTableName="allenamento_calciatore"
+                                 constraintName="fk_allenamento_calciatore_allenamento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="allenamento"/>
+
+        <addForeignKeyConstraint baseColumnNames="calciatore_id"
+                                 baseTableName="allenamento_calciatore"
+                                 constraintName="fk_allenamento_calciatore_calciatore_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="calciatore"/>
+        
+    </changeSet>
+</databaseChangeLog>

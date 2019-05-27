@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="allenamentoAggiuntivo">
+            <h2><span jhiTranslate="nextrainingApp.allenamentoAggiuntivo.detail.title">Allenamento Aggiuntivo</span> {{allenamentoAggiuntivo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nextrainingApp.allenamentoAggiuntivo.sport">Sport</span></dt>
+                <dd>
+                    <span>{{allenamentoAggiuntivo.sport}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.allenamentoAggiuntivo.natura">Natura</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'nextrainingApp.Natura.' + allenamentoAggiuntivo.natura}}">{{allenamentoAggiuntivo.natura}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.allenamentoAggiuntivo.lavoro">Lavoro</span></dt>
+                <dd>
+                    <span>{{allenamentoAggiuntivo.lavoro}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.allenamentoAggiuntivo.durata">Durata</span></dt>
+                <dd>
+                    <span>{{allenamentoAggiuntivo.durata}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.allenamentoAggiuntivo.calciatore">Calciatore</span></dt>
+                <dd>
+                    <span *ngFor="let calciatore of allenamentoAggiuntivo.calciatores; let last = last">
+                        <a [routerLink]="['/calciatore', calciatore?.id, 'view' ]">{{calciatore.cognome}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/allenamento-aggiuntivo', allenamentoAggiuntivo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="testdiCooper">
+            <h2><span jhiTranslate="nextrainingApp.testdiCooper.detail.title">Testdi Cooper</span> {{testdiCooper.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nextrainingApp.testdiCooper.dataTest">Data Test</span></dt>
+                <dd>
+                    <span>{{testdiCooper.dataTest}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.testdiCooper.distanza">Distanza</span></dt>
+                <dd>
+                    <span>{{testdiCooper.distanza}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.testdiCooper.v02Max">V 02 Max</span></dt>
+                <dd>
+                    <span>{{testdiCooper.v02Max}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.testdiCooper.commento">Commento</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'nextrainingApp.Feedback.' + testdiCooper.commento}}">{{testdiCooper.commento}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.testdiCooper.condClimatiche">Cond Climatiche</span></dt>
+                <dd>
+                    <span>{{testdiCooper.condClimatiche}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.testdiCooper.calciatore">Calciatore</span></dt>
+                <dd>
+                    <div *ngIf="testdiCooper.calciatore">
+                        <a [routerLink]="['/calciatore', testdiCooper.calciatore?.id, 'view']">{{testdiCooper.calciatore?.cognome}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/testdi-cooper', testdiCooper.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

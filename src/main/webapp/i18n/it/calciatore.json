@@ -1,0 +1,31 @@
+{
+  "nextrainingApp": {
+    "calciatore": {
+      "home": {
+        "title": "Atleti",
+        "createLabel": "Genera un nuovo atleta",
+        "createOrEditLabel": "Genera o modifica un atleta'"
+      },
+      "created": "&Egrave; stato generato un nuovo atleta con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato l'atleta identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato l'atleta con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare l'atleta {{ id }}?"
+      },
+      "detail": {
+        "title": "Atleta"
+      },
+      "codFiscale": "Cod. fiscale",
+      "cognome": "Cognome",
+      "nome": "Nome",
+      "dataNascita": "Data nascita",
+      "numTelefono": "Num. telefono",
+      "email": "Email",
+      "reparto": "Reparto",
+      "ruolo": "Ruolo",
+      "selettore": "Selettore",
+      "allenamento": "Allenamenti",
+      "allenamentoExtra": "Allenamenti extra"
+    }
+  }
+}

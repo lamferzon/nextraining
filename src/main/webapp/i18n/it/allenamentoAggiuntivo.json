@@ -1,0 +1,25 @@
+{
+  "nextrainingApp": {
+    "allenamentoAggiuntivo": {
+      "home": {
+        "title": "Allenamenti extra",
+        "createLabel": "Genera un nuovo allenamento extra",
+        "createOrEditLabel": "Genera o modifica un allenamento extra"
+      },
+      "created": "&Egrave; stato generato un nuovo allenamento extra con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato l'allenamento extra identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato l'allenamento extra con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare l'allenamento extra {{ id }}?"
+      },
+      "detail": {
+        "title": "Allenamento extra"
+      },
+      "sport": "Sport",
+      "natura": "Natura",
+      "lavoro": "Lavoro",
+      "durata": "Durata",
+      "calciatore": "Calciatori"
+    }
+  }
+}

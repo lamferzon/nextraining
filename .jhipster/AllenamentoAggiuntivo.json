@@ -1,0 +1,49 @@
+{
+    "name": "AllenamentoAggiuntivo",
+    "fields": [
+        {
+            "fieldName": "sport",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "natura",
+            "fieldType": "Natura",
+            "fieldValues": "AEROBICO,ANAEROBICO,POTENZIAMENTO,VELOCITA",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lavoro",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "durata",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "calciatore",
+            "otherEntityRelationshipName": "allenamentoExtra",
+            "relationshipName": "calciatore",
+            "otherEntityField": "cognome",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190527224038",
+    "entityTableName": "allenamento_aggiuntivo",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

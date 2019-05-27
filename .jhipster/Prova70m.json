@@ -1,0 +1,63 @@
+{
+    "name": "Prova70m",
+    "fields": [
+        {
+            "fieldName": "dataProva",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tempo",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "partenzaBlocchi",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "velMax",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "max"
+            ],
+            "fieldValidateRulesMax": 100
+        },
+        {
+            "fieldName": "commento",
+            "fieldType": "Feedback",
+            "fieldValues": "SCARSO,DISCRETO,BUONO,OTTIMO,ECCELLENTE"
+        },
+        {
+            "fieldName": "condClimatiche",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "calciatore",
+            "otherEntityRelationshipName": "prova70m",
+            "relationshipValidateRules": "required",
+            "relationshipName": "calciatore",
+            "otherEntityField": "cognome"
+        }
+    ],
+    "changelogDate": "20190527224034",
+    "entityTableName": "prova_70_m",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="testdiConconi">
+            <h2><span jhiTranslate="nextrainingApp.testdiConconi.detail.title">Testdi Conconi</span> {{testdiConconi.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nextrainingApp.testdiConconi.fcMax">Fc Max</span></dt>
+                <dd>
+                    <span>{{testdiConconi.fcMax}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.testdiConconi.sogliaAnaerobica">Soglia Anaerobica</span></dt>
+                <dd>
+                    <span>{{testdiConconi.sogliaAnaerobica}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.testdiConconi.velSoglia">Vel Soglia</span></dt>
+                <dd>
+                    <span>{{testdiConconi.velSoglia}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.testdiConconi.durata">Durata</span></dt>
+                <dd>
+                    <span>{{testdiConconi.durata}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.testdiConconi.commento">Commento</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'nextrainingApp.Feedback.' + testdiConconi.commento}}">{{testdiConconi.commento}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.testdiConconi.condClimatiche">Cond Climatiche</span></dt>
+                <dd>
+                    <span>{{testdiConconi.condClimatiche}}</span>
+                </dd>
+                <dt><span jhiTranslate="nextrainingApp.testdiConconi.calciatore">Calciatore</span></dt>
+                <dd>
+                    <div *ngIf="testdiConconi.calciatore">
+                        <a [routerLink]="['/calciatore', testdiConconi.calciatore?.id, 'view']">{{testdiConconi.calciatore?.cognome}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/testdi-conconi', testdiConconi.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

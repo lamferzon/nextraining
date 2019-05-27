@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Prova1500m.
+    -->
+    <changeSet id="20190527224033-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="calciatore_id"
+                                 baseTableName="prova_1500_m"
+                                 constraintName="fk_prova_1500_m_calciatore_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="calciatore"/>
+
+    </changeSet>
+</databaseChangeLog>

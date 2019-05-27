@@ -1,0 +1,61 @@
+{
+    "name": "TestdiCooper",
+    "fields": [
+        {
+            "fieldName": "dataTest",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "distanza",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "max",
+                "required"
+            ],
+            "fieldValidateRulesMax": 10
+        },
+        {
+            "fieldName": "v02Max",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "max"
+            ],
+            "fieldValidateRulesMax": 120
+        },
+        {
+            "fieldName": "commento",
+            "fieldType": "Feedback",
+            "fieldValues": "SCARSO,DISCRETO,BUONO,OTTIMO,ECCELLENTE"
+        },
+        {
+            "fieldName": "condClimatiche",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "calciatore",
+            "otherEntityRelationshipName": "testdiCooper",
+            "relationshipValidateRules": "required",
+            "relationshipName": "calciatore",
+            "otherEntityField": "cognome"
+        }
+    ],
+    "changelogDate": "20190527224031",
+    "entityTableName": "testdi_cooper",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

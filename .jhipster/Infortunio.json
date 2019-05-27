@@ -1,0 +1,58 @@
+{
+    "name": "Infortunio",
+    "fields": [
+        {
+            "fieldName": "dataInizio",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dataFine",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "gravita",
+            "fieldType": "Gravita",
+            "fieldValues": "UNO,DUE,TRE,QUATTRO,CINQUE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descrizione",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "specialista",
+            "otherEntityRelationshipName": "infortunio",
+            "relationshipName": "specialista",
+            "otherEntityField": "cognome"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "calciatore",
+            "otherEntityRelationshipName": "infortunio",
+            "relationshipValidateRules": "required",
+            "relationshipName": "calciatore",
+            "otherEntityField": "cognome"
+        }
+    ],
+    "changelogDate": "20190527224035",
+    "entityTableName": "infortunio",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
