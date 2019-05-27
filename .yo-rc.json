@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "it.unibg.nextraining",
+      "nativeLanguage": "it"
+    },
+    "jhipsterVersion": "6.0.1",
+    "applicationType": "monolith",
+    "baseName": "nextraining",
+    "packageName": "it.unibg.nextraining",
+    "packageFolder": "it/unibg/nextraining",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NzE2M2YxYjUzOGUzNGIxYzQ0ZTNmOGQ5ZjliZGE4Nzk3OTdjMGI1NzgyYzBmNzJmMTQyZmY1ODc1ZDE1OGRkOTU4NzE1ZWEzMzUyMmVmYjI3NWMxNDRhODNlYWYxMWNkOGZkYTBkNGE3OTg0MDc5ZTdjNWI5M2I2MzBlOGQ0ZGY=",
+    "clientFramework": "angularX",
+    "clientTheme": "cosmo",
+    "clientThemeVariant": "primary",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": ["protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "it",
+    "languages": ["it", "en"]
+  }
+}

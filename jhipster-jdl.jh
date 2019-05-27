@@ -1,0 +1,138 @@
+
+entity Calciatore {
+	codFiscale String maxlength(16) unique,
+    cognome String maxlength(50) required,
+    nome String maxlength(50) required,
+    dataNascita LocalDate,
+    numTelefono String maxlength(20) required,
+    email String maxlength(50),
+    reparto Reparto,
+    ruolo Ruolo,
+    selettore Selettore
+}
+
+enum Ruolo {
+POR, LIB, ADA, TD, CD, DC, CS, TS, ASA, CCD, MDD, 
+CDC, MDS, CDS, AD, ED, CCD, CC, CCS, ES, AS, COD, 
+CAD, COC, CAS, COS, AD, CA, AS, PD, ATT, PS, AT
+}
+
+enum Reparto {
+	DIFESA, CENTROCAMPO, ATTACCO
+}
+
+enum Selettore {
+	DIFENSORE, ATTACCANTE
+}
+
+entity TestdiConconi {
+ 	fcMax Integer max(220) required,
+    sogliaAnaerobica Integer max(220) required,
+    velSoglia Float max(100),
+    durata Float required max(60),
+    commento Feedback,
+    condClimatiche String maxlength(50)
+  }
+ 
+ enum Feedback {
+ 	SCARSO, DISCRETO, BUONO, OTTIMO, ECCELLENTE
+ }
+ 
+ entity TestdiCooper {
+ 	dataTest LocalDate required,
+    distanza Float max(10) required,
+    v02Max Integer max(120),
+    commento Feedback,
+    condClimatiche String maxlength(50)
+ }
+ 
+ entity ParametriFisici {
+ 	dataRivelazione LocalDate required,
+    massaCorporea Integer max(150) required,
+    altezza Integer max(250) required,
+    bmi Float max(50),
+    condizione Stato,
+    fcRiposo Integer max(150)
+  }
+  
+  enum Stato {
+ 	SOTTOPESO, NORMOPESO, SOVRAPPESO
+ }
+ 
+ entity Prova1500m {
+ 	dataProva LocalDate required,
+    tempo Float required,
+    tempoKm Float max(10),
+    commento Feedback,
+    condClimatiche String maxlength(50)
+ }
+ 
+ entity Prova70m {
+ 	dataProva LocalDate required,
+    tempo Float required,
+    partenzaBlocchi Boolean,
+    velMax Float max(100)
+    commento Feedback,
+    condClimatiche String maxlength(50)
+ }
+ 
+ entity Infortunio {
+ 	dataInizio LocalDate required,
+    dataFine LocalDate,
+    gravita Gravita required,
+    descrizione String maxlength(50)
+ }
+ 
+ enum Gravita {
+ 	UNO, DUE, TRE, QUATTRO, CINQUE
+ }
+ 
+ entity Specialista {
+ 	codFiscale String maxlength(16) unique,
+    cognome String maxlength(50) required,
+    nome String maxlength(50) required,
+    specializzazione String maxlength(50),
+    numTelefono String maxlength(20) required,
+    email String maxlength(40),
+    indirizzoStudio String maxlength(50),
+    paeseStudio String maxlength(50)
+ }
+ 
+ entity Allenamento {
+ 	dataSvolgimento LocalDate required,
+    natura Natura required,
+    lavoro String
+ }
+ 
+ entity AllenamentoAggiuntivo {
+ 	sport String maxlength(50) required,
+    natura Natura required,
+    lavoro String,
+    durata Float
+ }
+ 
+ enum Natura {
+ 	AEROBICO, ANAEROBICO, POTENZIAMENTO, VELOCITA
+ }
+  
+ relationship OneToOne {
+ 	TestdiConconi {calciatore (cognome) required} to Calciatore
+ }
+ 
+ relationship ManyToOne {
+ 	Infortunio {specialista (cognome)} to Specialista
+    Infortunio {calciatore (cognome) required} to Calciatore
+    TestdiCooper {calciatore (cognome) required} to Calciatore
+    ParametriFisici {calciatore (cognome) required} to Calciatore
+    Prova1500m {calciatore (cognome) required} to Calciatore
+    Prova70m {calciatore (cognome) required} to Calciatore
+ }
+  
+ relationship ManyToMany {
+ 	Allenamento {calciatore (cognome) required} to Calciatore {allenamento (dataSvolgimento)}
+    AllenamentoAggiuntivo {calciatore (cognome)} to Calciatore {allenamentoExtra}
+ }
+
+paginate Calciatore, TestdiConconi, TestdiCooper, ParametriFisici,
+Prova1500m, Prova70m, Infortunio, Specialista, Allenamento, AllenamentoAggiuntivo with infinite-scroll
+service all with serviceImpl
