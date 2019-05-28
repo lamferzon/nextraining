@@ -28,7 +28,7 @@
                 <dt><span jhiTranslate="nextrainingApp.testdiCooper.calciatore">Calciatore</span></dt>
                 <dd>
                     <div *ngIf="testdiCooper.calciatore">
-                        <a [routerLink]="['/calciatore', testdiCooper.calciatore?.id, 'view']">{{testdiCooper.calciatore?.cognome}}</a>
+                        <a [routerLink]="['/calciatore', testdiCooper.calciatore?.id, 'view']">{{testdiCooper.calciatore?.cognome}} {{testdiCooper.calciatore?.nome}}</a>
                     </div>
                 </dd>
             </dl>

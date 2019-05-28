@@ -33,12 +33,12 @@
                 <td>{{infortunio.descrizione}}</td>
                 <td>
                     <div *ngIf="infortunio.specialista">
-                        <a [routerLink]="['../specialista', infortunio.specialista?.id, 'view' ]" >{{infortunio.specialista?.cognome}}</a>
+                        <a [routerLink]="['../specialista', infortunio.specialista?.id, 'view' ]" >{{infortunio.specialista?.cognome}} {{infortunio.specialista?.nome}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="infortunio.calciatore">
-                        <a [routerLink]="['../calciatore', infortunio.calciatore?.id, 'view' ]" >{{infortunio.calciatore?.cognome}}</a>
+                        <a [routerLink]="['../calciatore', infortunio.calciatore?.id, 'view' ]" >{{infortunio.calciatore?.cognome}} {{infortunio.calciatore?.nome}}</a>
                     </div>
                 </td>
                 <td class="text-right">

@@ -24,13 +24,13 @@
                 <dt><span jhiTranslate="nextrainingApp.infortunio.specialista">Specialista</span></dt>
                 <dd>
                     <div *ngIf="infortunio.specialista">
-                        <a [routerLink]="['/specialista', infortunio.specialista?.id, 'view']">{{infortunio.specialista?.cognome}}</a>
+                        <a [routerLink]="['/specialista', infortunio.specialista?.id, 'view']">{{infortunio.specialista?.cognome}} {{infortunio.specialista?.nome}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="nextrainingApp.infortunio.calciatore">Calciatore</span></dt>
                 <dd>
                     <div *ngIf="infortunio.calciatore">
-                        <a [routerLink]="['/calciatore', infortunio.calciatore?.id, 'view']">{{infortunio.calciatore?.cognome}}</a>
+                        <a [routerLink]="['/calciatore', infortunio.calciatore?.id, 'view']">{{infortunio.calciatore?.cognome}} {{infortunio.calciatore?.nome}}</a>
                     </div>
                 </dd>
             </dl>

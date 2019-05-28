@@ -36,7 +36,7 @@
                 <td>{{prova70m.condClimatiche}}</td>
                 <td>
                     <div *ngIf="prova70m.calciatore">
-                        <a [routerLink]="['../calciatore', prova70m.calciatore?.id, 'view' ]" >{{prova70m.calciatore?.cognome}}</a>
+                        <a [routerLink]="['../calciatore', prova70m.calciatore?.id, 'view' ]" >{{prova70m.calciatore?.cognome}} {{prova70m.calciatore?.nome}}</a>
                     </div>
                 </td>
                 <td class="text-right">

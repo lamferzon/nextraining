@@ -53,7 +53,7 @@
                 <div class="form-group">
                     <label jhiTranslate="nextrainingApp.allenamentoAggiuntivo.calciatore" for="field_calciatores">Calciatore</label>
                     <select class="form-control" id="field_calciatores" multiple name="calciatores" formControlName="calciatores">
-                        <option [ngValue]="getSelected(editForm.get('calciatores').value, calciatoreOption)" *ngFor="let calciatoreOption of calciatores; trackBy: trackCalciatoreById">{{calciatoreOption.cognome}}</option>
+                        <option [ngValue]="getSelected(editForm.get('calciatores').value, calciatoreOption)" *ngFor="let calciatoreOption of calciatores; trackBy: trackCalciatoreById">{{calciatoreOption.cognome}} {{calciatoreOption.nome}}</option>
                     </select>
                 </div>
             </div>

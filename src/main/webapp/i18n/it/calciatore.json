@@ -4,7 +4,7 @@
       "home": {
         "title": "Atleti",
         "createLabel": "Genera un nuovo atleta",
-        "createOrEditLabel": "Genera o modifica un atleta'"
+        "createOrEditLabel": "Genera o modifica un atleta"
       },
       "created": "&Egrave; stato generato un nuovo atleta con identificatore {{ param }}",
       "updated": "&Egrave; stato aggiornato l'atleta identificato da {{ param }}",

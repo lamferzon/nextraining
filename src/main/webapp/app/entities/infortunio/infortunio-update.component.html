@@ -65,14 +65,14 @@
                     <label class="form-control-label" jhiTranslate="nextrainingApp.infortunio.specialista" for="field_specialista">Specialista</label>
                     <select class="form-control" id="field_specialista" name="specialista" formControlName="specialista">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="specialistaOption.id === editForm.get('specialista').value?.id ? editForm.get('specialista').value : specialistaOption" *ngFor="let specialistaOption of specialistas; trackBy: trackSpecialistaById">{{specialistaOption.cognome}}</option>
+                        <option [ngValue]="specialistaOption.id === editForm.get('specialista').value?.id ? editForm.get('specialista').value : specialistaOption" *ngFor="let specialistaOption of specialistas; trackBy: trackSpecialistaById">{{specialistaOption.cognome}} {{specialistaOption.nome}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="nextrainingApp.infortunio.calciatore" for="field_calciatore">Calciatore</label>
                     <select class="form-control" id="field_calciatore" name="calciatore" formControlName="calciatore">
                         <option *ngIf="!editForm.get('calciatore').value" [ngValue]="null" selected></option>
-                        <option [ngValue]="calciatoreOption.id === editForm.get('calciatore').value?.id ? editForm.get('calciatore').value : calciatoreOption" *ngFor="let calciatoreOption of calciatores; trackBy: trackCalciatoreById">{{calciatoreOption.cognome}}</option>
+                        <option [ngValue]="calciatoreOption.id === editForm.get('calciatore').value?.id ? editForm.get('calciatore').value : calciatoreOption" *ngFor="let calciatoreOption of calciatores; trackBy: trackCalciatoreById">{{calciatoreOption.cognome}} {{calciatoreOption.nome}}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('calciatore').invalid && (editForm.get('calciatore').dirty || editForm.get('calciatore').touched)">

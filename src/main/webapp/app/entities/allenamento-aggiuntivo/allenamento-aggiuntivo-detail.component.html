@@ -24,7 +24,7 @@
                 <dt><span jhiTranslate="nextrainingApp.allenamentoAggiuntivo.calciatore">Calciatore</span></dt>
                 <dd>
                     <span *ngFor="let calciatore of allenamentoAggiuntivo.calciatores; let last = last">
-                        <a [routerLink]="['/calciatore', calciatore?.id, 'view' ]">{{calciatore.cognome}}</a>{{last ? '' : ', '}}
+                        <a [routerLink]="['/calciatore', calciatore?.id, 'view' ]">{{calciatore.cognome}} {{calciatore.nome}}</a>{{last ? '' : ', '}}
                     </span>
                 </dd>
             </dl>

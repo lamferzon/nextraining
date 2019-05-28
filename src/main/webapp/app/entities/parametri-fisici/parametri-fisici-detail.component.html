@@ -32,7 +32,7 @@
                 <dt><span jhiTranslate="nextrainingApp.parametriFisici.calciatore">Calciatore</span></dt>
                 <dd>
                     <div *ngIf="parametriFisici.calciatore">
-                        <a [routerLink]="['/calciatore', parametriFisici.calciatore?.id, 'view']">{{parametriFisici.calciatore?.cognome}}</a>
+                        <a [routerLink]="['/calciatore', parametriFisici.calciatore?.id, 'view']">{{parametriFisici.calciatore?.cognome}} {{parametriFisici.calciatore?.nome}}</a>
                     </div>
                 </dd>
             </dl>
