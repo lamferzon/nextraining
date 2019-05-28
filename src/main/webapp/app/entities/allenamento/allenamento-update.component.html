@@ -51,9 +51,9 @@
                         <option [ngValue]="getSelected(editForm.get('calciatores').value, calciatoreOption)" *ngFor="let calciatoreOption of calciatores; trackBy: trackCalciatoreById">{{calciatoreOption.cognome}} {{calciatoreOption.nome}}</option>
                     </select>
                 </div>
-                <div *ngIf="editForm.get('calciatore').invalid && (editForm.get('calciatore').dirty || editForm.get('calciatore').touched)">
+                <div *ngIf="editForm.get('calciatores').invalid && (editForm.get('calciatores').dirty || editForm.get('calciatores').touched)">
                     <small class="form-text text-danger"
-                           *ngIf="editForm.get('calciatore').errors.required" jhiTranslate="entity.validation.required">
+                           *ngIf="editForm.get('calciatores').errors.required" jhiTranslate="entity.validation.required">
                         This field is required.
                     </small>
                 </div>
