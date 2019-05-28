@@ -10,7 +10,7 @@
       "updated": "&Egrave; stato aggiornato il test identificato da {{ param }}",
       "deleted": "&Egrave; stato eliminato il test con identificatore {{ param }}",
       "delete": {
-        "question": "Sei sicuro di volere eliminare il test{ id }}?"
+        "question": "Sei sicuro di volere eliminare il test {{ id }}?"
       },
       "detail": {
         "title": "Test di Conconi"
