@@ -16,7 +16,7 @@
         "infortunio": "Infortuni",
         "specialista": "Specialisti",
         "allenamento": "Allenamenti",
-        "allenamentoAggiuntivo": "Allenamenti extra",
+        "allenamentoAggiuntivo": "Lavori aggiuntivi",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -141,5 +141,5 @@
     "idexists": "Un(a) nuovo/a {{entityName}} non può già avere un ID",
     "idnull": "Invalid ID"
   },
-  "footer": "Piè di pagina"
+  "footer": "&copy; 2019 Lorenzo Leoni"
 }
