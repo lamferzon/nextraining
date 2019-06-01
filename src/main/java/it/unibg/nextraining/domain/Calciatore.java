@@ -76,8 +76,80 @@ public class Calciatore implements Serializable {
     @ManyToMany(mappedBy = "calciatores")
     @JsonIgnore
     private Set<AllenamentoAggiuntivo> allenamentoExtras = new HashSet<>();
+    
+    @OneToMany(mappedBy = "calciatore", cascade = CascadeType.REMOVE)
+    @JsonIgnore
+    private Set<Prova70m> prova70list = new HashSet<>();
+    
+    @OneToMany(mappedBy = "calciatore", cascade = CascadeType.REMOVE)
+    @JsonIgnore
+    private Set<Prova1500m> prova1500list = new HashSet<>();
+    
+	@OneToMany(mappedBy = "calciatore", cascade = CascadeType.REMOVE)
+    @JsonIgnore
+    private Set<TestdiCooper> testdiCooperlist = new HashSet<>();
+    
+    @OneToMany(mappedBy = "calciatore", cascade = CascadeType.REMOVE)
+    @JsonIgnore
+    private Set<ParametriFisici> parametriFisicilist = new HashSet<>();
+    
+    @OneToMany(mappedBy = "calciatore", cascade = CascadeType.REMOVE)
+    @JsonIgnore
+    private Set<Infortunio> infortuniolist = new HashSet<>();
+    
+    @OneToOne(mappedBy = "calciatore", cascade = CascadeType.REMOVE)
+    @JsonIgnore
+    private TestdiConconi testdiConconilist;
+    
+    public TestdiConconi getTestdiConconilist() {
+		return testdiConconilist;
+	}
 
-    // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
+	public void setTestdiConconilist(TestdiConconi testdiConconilist) {
+		this.testdiConconilist = testdiConconilist;
+	}
+
+	public Set<TestdiCooper> getTestdiCooperlist() {
+  		return testdiCooperlist;
+  	}
+
+  	public void setTestdiCooperlist(Set<TestdiCooper> testdiCooperlist) {
+  		this.testdiCooperlist = testdiCooperlist;
+  	}
+
+  	public Set<ParametriFisici> getParametriFisicilist() {
+  		return parametriFisicilist;
+  	}
+
+  	public void setParametriFisicilist(Set<ParametriFisici> parametriFisicilist) {
+  		this.parametriFisicilist = parametriFisicilist;
+  	}
+
+  	public Set<Infortunio> getInfortuniolist() {
+  		return infortuniolist;
+  	}
+
+  	public void setInfortuniolist(Set<Infortunio> infortuniolist) {
+  		this.infortuniolist = infortuniolist;
+  	}
+
+    public Set<Prova1500m> getProva1500list() {
+		return prova1500list;
+	}
+
+	public void setProva1500list(Set<Prova1500m> prova1500list) {
+		this.prova1500list = prova1500list;
+	}
+
+	public Set<Prova70m> getProva70list() {
+		return prova70list;
+	}
+
+	public void setProva70list(Set<Prova70m> prova70list) {
+		this.prova70list = prova70list;
+	}
+
+	// jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
     }
@@ -236,7 +308,7 @@ public class Calciatore implements Serializable {
         this.allenamentoExtras = allenamentoAggiuntivos;
         return this;
     }
-
+    
     public Calciatore addAllenamentoExtra(AllenamentoAggiuntivo allenamentoAggiuntivo) {
         this.allenamentoExtras.add(allenamentoAggiuntivo);
         allenamentoAggiuntivo.getCalciatores().add(this);
