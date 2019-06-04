@@ -85,7 +85,7 @@
                     <label class="form-control-label" jhiTranslate="nextrainingApp.prova70m.calciatore" for="field_calciatore">Calciatore</label>
                     <select class="form-control" id="field_calciatore" name="calciatore" formControlName="calciatore">
                         <option *ngIf="!editForm.get('calciatore').value" [ngValue]="null" selected></option>
-                        <option [ngValue]="calciatoreOption.id === editForm.get('calciatore').value?.id ? editForm.get('calciatore').value : calciatoreOption" *ngFor="let calciatoreOption of calciatores; trackBy: trackCalciatoreById">{{calciatoreOption.cognome}} {{calciatoreOption.nome}} {{calciatoreOption.selettore}}</option>
+                        <option [ngValue]="calciatoreOption.id === editForm.get('calciatore').value?.id ? editForm.get('calciatore').value : calciatoreOption" *ngFor="let calciatoreOption of (calciatores | selettoreFilter: 'DIFENSORE'); trackBy: trackCalciatoreById">{{calciatoreOption.cognome}} {{calciatoreOption.nome}} {{calciatoreOption.selettore}}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('calciatore').invalid && (editForm.get('calciatore').dirty || editForm.get('calciatore').touched)">
